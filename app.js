@@ -85,22 +85,6 @@ app.use(
   })
 );
 
-// app.use(
-//   helmet.contentSecurityPolicy({
-//     directives: {
-//       defaultSrc: ["'self'", 'https:', 'http:', 'data:', 'ws:'],
-//       // connectSrc: ["'self'", 'http:'],
-//       scriptSrc: ["'self'", 'https:', 'http:', 'blob:'],
-//       styleSrc: ["'self'", 'https:', 'http:', 'unsafe-inline'],
-//       baseUri: ["'self'"],
-//       workerSrc: ["'self'", 'blob:'],
-//       objectSrc: [],
-//       imgSrc: ["'self'", 'blob:', 'data:'],
-//       fontSrc: ["'self'", 'https:', 'http:', 'data:'],
-//     },
-//   })
-// );
-
 // Disable contentSecurityPolicy
 // app.use(
 //   helmet({ contentSecurityPolicy: false, crossOriginEmbedderPolicy: false })
