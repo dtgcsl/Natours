@@ -1,12 +1,14 @@
 /* eslint-disable */
 import '@babel/polyfill';
 import { displayMap } from './mapbox';
+import { signup } from './signup';
 import { login, logout } from './login';
 import { updateSettings } from './updateSettings';
 import { bookTour } from './stripe';
 
 // DOM ELEMENTS
 const mapBox = document.getElementById('map');
+const signupForm = document.querySelector('.signup-form');
 const loginForm = document.querySelector('.form--login');
 const logOutBtn = document.querySelector('.nav__el--logout');
 const userDataForm = document.querySelector('.form-user-data');
@@ -19,6 +21,24 @@ if (mapBox) {
     document.getElementById('map').dataset.locations
   );
   displayMap(locations);
+}
+
+if (signupForm) {
+  signupForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // Change button text while Signing up a new user
+    document.querySelector('.btn--signup').innerText = 'Signing...';
+
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const passwordConfirm = document.getElementById('passwordconfirm').value;
+    await signup(name, email, password, passwordConfirm);
+
+    // Change button text and clear input-fields after Signing up new user
+    document.querySelector('.btn--signup').innerText = 'Signup';
+  });
 }
 
 if (loginForm) {
