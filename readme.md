@@ -1,3 +1,3 @@
-# Natours Application
+Web run at https://natours-production-2bf3.up.railway.app/
 
-Built using modern technologies: nodejs,express,mongoose,mongoDB and friends 😊
+# Natours Application
